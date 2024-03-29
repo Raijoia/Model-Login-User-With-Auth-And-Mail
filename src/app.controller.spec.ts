@@ -15,8 +15,10 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return "Olá, bem vindo a API de cadastro de usuários com auth e emailsender!"', () => {
+      expect(appController.getHello()).toBe(
+        'Olá, bem vindo a API de cadastro de usuários com auth e emailsender!',
+      );
     });
   });
 });
