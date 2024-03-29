@@ -12,8 +12,9 @@ export class UserController {
   ): Promise<User> {
     // eslint-disable-next-line prefer-const
     let { username, password, email } = user;
+
     password = await this.userService.encryptPassword(password);
-    console.log(this.userService.decryptPassword(password));
+
     return this.userService.createUser({ username, password, email });
   }
 }
