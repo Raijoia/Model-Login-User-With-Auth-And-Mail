@@ -4,8 +4,16 @@ meta {
   seq: 1
 }
 
-get {
-  url: 
-  body: none
+post {
+  url: http://localhost:8080/user/register
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "username": "teste",
+    "password": "teste",
+    "email": "test@test.com"
+  }
 }
