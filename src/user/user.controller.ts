@@ -7,7 +7,7 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get('login')
-  async login (@Body() user: { email: string; password: string }) {
+  async login(@Body() user: { email: string; password: string }) {
     return await this.userService.login({ ...user });
   }
 

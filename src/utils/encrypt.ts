@@ -10,12 +10,12 @@ export function encryptPassword(password: string): Promise<string> {
   return bcrypt.hash(password, parseInt(saltRounds));
 }
 
-export function comparetor(
+export async function comparetor(
   password: string,
   hash: string,
   userLogin: User,
 ): Promise<User | ErrorResponse> {
-  if (bcrypt.compare(password, hash)) {
+  if (await bcrypt.compare(password, hash)) {
     return Promise.resolve(userLogin);
   } else {
     return Promise.resolve({ message: 'Password is incorrect' });
